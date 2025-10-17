@@ -1,4 +1,8 @@
+import { useRouter } from 'next/router'
+
 export default function Hero() {
+  const router = useRouter()
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -30,7 +34,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 fade-in" style={{ animationDelay: '0.4s' }}>
           <button
-            onClick={() => scrollToSection('confidence')}
+            onClick={() => router.push('/dashboard')}
             className="bg-white text-navy-900 px-8 py-4 rounded-lg font-medium text-lg hover:bg-gray-100 transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
           >
             Start free trial

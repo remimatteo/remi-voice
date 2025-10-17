@@ -1,9 +1,19 @@
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import { useRouter } from 'next/router'
+
 export default function Navigation() {
+  const router = useRouter()
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
+  }
+
+  const handleStartTrial = () => {
+    // Redirect to dashboard - if not authenticated, Clerk will show sign-up
+    router.push('/dashboard')
   }
 
   return (
@@ -32,12 +42,36 @@ export default function Navigation() {
           >
             View demo
           </button>
-          <button
-            onClick={() => scrollToSection('confidence')}
-            className="bg-white text-navy-900 px-5 py-2 rounded-lg font-medium hover:bg-gray-100 transition-all duration-200"
-          >
-            Start free trial
-          </button>
+
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="text-white hover:text-gray-300 transition-colors duration-200">
+                Sign in
+              </button>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <button className="bg-white text-navy-900 px-5 py-2 rounded-lg font-medium hover:bg-gray-100 transition-all duration-200">
+                Start free trial
+              </button>
+            </SignUpButton>
+          </SignedOut>
+
+          <SignedIn>
+            <button
+              onClick={handleStartTrial}
+              className="text-white hover:text-gray-300 transition-colors duration-200"
+            >
+              Dashboard
+            </button>
+            <UserButton
+              afterSignOutUrl="/"
+              appearance={{
+                elements: {
+                  avatarBox: "w-10 h-10"
+                }
+              }}
+            />
+          </SignedIn>
         </div>
       </div>
     </nav>
