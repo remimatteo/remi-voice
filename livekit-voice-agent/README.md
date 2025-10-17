@@ -31,19 +31,19 @@ You need API keys for these services (all have free tiers):
 Open `.env.local` and add your keys:
 
 ```env
-# LiveKit Configuration (already set)
-LIVEKIT_API_KEY=APIpZb5zycn8t2y
-LIVEKIT_API_SECRET=KGMYAekWiXSUTqFVEhEvJwI9maPeawMpkkMfqy0rHecB
-LIVEKIT_URL=wss://first-agent-6v5ajgaq.livekit.cloud
+# LiveKit Configuration
+LIVEKIT_API_KEY=your_livekit_api_key
+LIVEKIT_API_SECRET=your_livekit_api_secret
+LIVEKIT_URL=wss://your-livekit-url.livekit.cloud
 
-# OpenAI API Key (ADD YOUR KEY HERE)
-OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxx
+# OpenAI API Key
+OPENAI_API_KEY=your_openai_api_key
 
-# AssemblyAI API Key (ADD YOUR KEY HERE)
-ASSEMBLYAI_API_KEY=xxxxxxxxxxxxx
+# AssemblyAI API Key (optional - if using AssemblyAI)
+ASSEMBLYAI_API_KEY=your_assemblyai_api_key
 
-# Cartesia API Key (ADD YOUR KEY HERE)
-CARTESIA_API_KEY=xxxxxxxxxxxxx
+# Cartesia API Key (optional - if using Cartesia)
+CARTESIA_API_KEY=your_cartesia_api_key
 ```
 
 ### 3. Run the Voice Agent

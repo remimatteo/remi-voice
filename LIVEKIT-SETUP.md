@@ -72,18 +72,11 @@ pip install "livekit-agents[silero,turn-detector]~=1.2" "livekit-plugins-noise-c
 
 ### 4. Create `.env.local` for Python Agent
 
-```bash
-# Create .env.local in the livekit-voice-agent folder
-echo LIVEKIT_API_KEY=APIpZb5zycn8t2y > .env.local
-echo LIVEKIT_API_SECRET=KGMYAekWiXSUTqFVEhEvJwI9maPeawMpkkMfqy0rHecB >> .env.local
-echo LIVEKIT_URL=wss://first-agent-6v5ajgaq.livekit.cloud >> .env.local
-```
-
-Or create the file manually with:
+Create the file manually with your actual LiveKit credentials:
 ```env
-LIVEKIT_API_KEY=APIpZb5zycn8t2y
-LIVEKIT_API_SECRET=KGMYAekWiXSUTqFVEhEvJwI9maPeawMpkkMfqy0rHecB
-LIVEKIT_URL=wss://first-agent-6v5ajgaq.livekit.cloud
+LIVEKIT_API_KEY=your_livekit_api_key
+LIVEKIT_API_SECRET=your_livekit_api_secret
+LIVEKIT_URL=wss://your-livekit-url.livekit.cloud
 ```
 
 ### 5. Create the Voice Agent Code
@@ -180,12 +173,12 @@ You'll need to add API keys for the AI services used by the agent:
 
 Your `.env.local` should now look like:
 ```env
-LIVEKIT_API_KEY=APIpZb5zycn8t2y
-LIVEKIT_API_SECRET=KGMYAekWiXSUTqFVEhEvJwI9maPeawMpkkMfqy0rHecB
-LIVEKIT_URL=wss://first-agent-6v5ajgaq.livekit.cloud
-OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxx
-ASSEMBLYAI_API_KEY=xxxxxxxxxxxxx
-CARTESIA_API_KEY=xxxxxxxxxxxxx
+LIVEKIT_API_KEY=your_livekit_api_key
+LIVEKIT_API_SECRET=your_livekit_api_secret
+LIVEKIT_URL=wss://your-livekit-url.livekit.cloud
+OPENAI_API_KEY=your_openai_api_key
+ASSEMBLYAI_API_KEY=your_assemblyai_api_key
+CARTESIA_API_KEY=your_cartesia_api_key
 ```
 
 ### 7. Run the Voice Agent
